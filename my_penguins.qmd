@@ -9,9 +9,7 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-## Average Bill Length by Species
-
-This table shows the average bill length for each penguin species.
+## This is the average bill length
 
 ```{r}
 penguins |>
@@ -20,4 +18,11 @@ penguins |>
     average_bill_length = mean(bill_length_mm, na.rm = TRUE)
   ) |>
   knitr::kable()
+```
+## The penguin graph
+
+```{r}
+penguins |>
+  ggplot(aes(x = bill_length_mm, y = flipper_length_mm)) +
+  geom_point()
 ```
