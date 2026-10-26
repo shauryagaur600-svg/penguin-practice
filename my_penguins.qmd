@@ -1,0 +1,23 @@
+---
+title: "Penguin Analysis"
+author: "Shaurya Gaur"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Average Bill Length by Species
+
+This table shows the average bill length for each penguin species.
+
+```{r}
+penguins |>
+  group_by(species) |>
+  summarise(
+    average_bill_length = mean(bill_length_mm, na.rm = TRUE)
+  ) |>
+  knitr::kable()
+```
